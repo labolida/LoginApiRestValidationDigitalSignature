@@ -2,13 +2,16 @@
 
 # setup
 
-cd /area6/nodejs/dev/LoginApiRestValidationDigitalSignature/
 npm init
+
 npm install express
+
 npm install crypto
 
 npm run login
+
 npm run validate
+
 
 
 # Project
@@ -115,6 +118,8 @@ Save these files (privateKey.pem and publicKey.pem) in the same directory as the
 
 
 ### Testinh with cURL
+
+**attention** I had to change certain ports that I was using with another programs.
 
 Login
 
