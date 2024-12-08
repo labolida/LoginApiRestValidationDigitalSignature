@@ -10,15 +10,15 @@ app.use(express.json());
 const publicKey = fs.readFileSync('./publicKey.pem', 'utf-8');
 
 app.post('/validate-hash', (req, res) => {
-	const { username, password, signature } = req.body;
+	const { hashToken, signature } = req.body;
 
-	if (!username || !password || !signature) {
-		return res.status(400).json({ error: 'Username, password, and signature are required.' });
+	if ( !hashToken || !signature) {
+		return res.status(400).json({ error: 'hashToken and signature are required.' });
 	}
 
-	const data = `${username}:${password}`;
+	
 	const verify = crypto.createVerify('SHA256');
-	verify.update(data);
+	verify.update(hashToken);
 	verify.end();
 
 	const isValid = verify.verify(publicKey, signature, 'hex');
