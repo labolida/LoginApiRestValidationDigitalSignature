@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "express": "^4.21.2"
+  },
+  "name": "loginapirestvalidationdigitalsignature",
+  "description": "/area6/nodejs/dev/LoginApiRestValidationDigitalSignature/",
+  "version": "1.0.0",
+  "main": "login.js",
+  "scripts": {
+    "login": "node login.js",
+    "validate": "node validate.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
